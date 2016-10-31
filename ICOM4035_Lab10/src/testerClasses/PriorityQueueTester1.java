@@ -18,11 +18,17 @@ public class PriorityQueueTester1 {
 	
 	public static void main(String[] args) {
 
-		DisplayablePriorityQueue<Integer, String> pq = new UnsortedListPriorityQueue<>(new IntegerComparator1());  //1
+		DisplayablePriorityQueue<Integer, String> pq = new UnsortedListPriorityQueue<>(new IntegerComparator2());  //1
 		//DisplayablePriorityQueue<Integer, String> pq = new SortedListPriorityQueue<>(new IntegerComparator1());  //2
 		//DisplayablePriorityQueue<Integer, String> pq = new HeapListPriorityQueue<>(new IntegerComparator1());    //3
 		//DisplayablePriorityQueue<Integer, String> pq = new HeapPriorityQueue<>(new IntegerComparator1());        //4
 
+		//if change to IntegerComparator2, then the min() will be the entry with the highest key. This is because 
+		//both min() and removeMin() calls the auxiliary method minEntryIndex() which uses the ordering imposed by 
+		//IntegerComprator1 & 2 to determine the minimum entry index. So, when IntegerComparator2 changes that ordering to the 
+		//opposite, instead of finding the minimum, it finds the maximum. 
+		
+		
 		add(pq, 20, "twenty");
 		removeMin(pq); 
 		//removeMin(pq);  
