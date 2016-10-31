@@ -18,6 +18,11 @@ public class PriorityQueueTester2 {
 		//pq = new SortedListPriorityQueue<Integer, Integer>(new IntegerComparator1());    // 2
 		//pq = new HeapListPriorityQueue<Integer, Integer>(new IntegerComparator1());      // 3
 		//pq = new HeapPriorityQueue<Integer, Integer>(new IntegerComparator1());          // 4
+		
+		//When change to IntegerComparator2, the ordering is changed to the opposite of IntegerComparator2, so 
+		//when invoking what, which does nothing but sorting the array, the array will be sorted in decreasing order
+		// or non-increasing order for repeated the case of repeated keys. Recall that the sorting is done by means
+		//of a heap, so the removeMin() or insert(...) method uses the given ordering relation to store or return data.
 
 		TesterUtils.displayArray("Content of the array before ", arr); 
 		TesterUtils.what(arr, pq); 

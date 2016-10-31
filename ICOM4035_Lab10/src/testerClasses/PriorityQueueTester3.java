@@ -1,5 +1,6 @@
 package testerClasses;
 
+import priorityQueue.SortedListPriorityQueue;
 import priorityQueue.UnsortedListPriorityQueue;
 import priorityQueueInterfaces.PriorityQueue;
 
@@ -11,13 +12,11 @@ public class PriorityQueueTester3 {
 
 		PriorityQueue<String, String> pq;
 
-		pq = new UnsortedListPriorityQueue<String, String>(new StringComparator1()); // 1
-		// pq = new SortedListPriorityQueue<Integer, Integer>(new
-		// IntegerComparator1()); // 2
-		// pq = new HeapListPriorityQueue<Integer, Integer>(new
-		// IntegerComparator1()); // 3
-		// pq = new HeapPriorityQueue<Integer, Integer>(new
-		// IntegerComparator1()); // 4
+		//pq = new UnsortedListPriorityQueue<String, String>(new StringComparator1()); // 1
+		pq = new SortedListPriorityQueue<String, String>(new StringComparator1()); // 2
+		// pq = new HeapListPriorityQueue<String, String>(new
+		// StringComparator1()); // 3
+		//pq = new HeapPriorityQueue<String, String>(new StringComparator1()); // 4
 
 		TesterUtils.displayArray("Content of the array before ", arr);
 		TesterUtils.what(arr, pq);
